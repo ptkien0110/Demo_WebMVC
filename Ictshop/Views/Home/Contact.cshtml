@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+
+<div class="mainmenu-area">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li><a href="@Url.Action("ShopPage","Sanpham")">Shop page</a></li>
+                    <li><a href="@Url.Action("GioHang","GioHang")">Cart</a></li>
+                    <li><a href="@Url.Action("Checkout","Home")">Checkout</a></li>
+                    <li  class="active"><a href="@Url.Action("Contact","Home")">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Contact</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<address>
+    <p>
+        One Microsoft Way<br />
+        Redmond, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.0100
+    </p>
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>

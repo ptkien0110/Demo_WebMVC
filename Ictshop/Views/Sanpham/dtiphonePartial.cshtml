@@ -1,0 +1,30 @@
+﻿<div class="maincontent-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div class="latest-product">
+                    <div class="product-carousel">
+                        @foreach (var item in Model)
+                        {
+                            <div class="single-product">
+                                <div class="product-f-image">
+                                    <a href="@Url.Action("xemchitiet", new {@Masp=item.Masp })">
+                                        <img src=@Url.Content("~/HinhanhSP/"+item.Anhbia) class="img-responsive" alt="" width="400" height="400" />
+                                    </a>
+                                    <div class="product-hover">
+                                        <a style="margin-top:-20px;" href="@Url.Action("ThemGioHang", "GioHang", new { @iMasp = item.Masp, @strURL = Request.Url.ToString() })" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        <a href="@Url.Action("xemchitiet", new {@Masp=item.Masp })" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                    </div>
+                                </div>
+
+                                <h3>@item.Tensp</h3>
+                                <h3 style="color:red">Giá: @item.Giatien</h3>
+                            </div>}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End main content area -->
+

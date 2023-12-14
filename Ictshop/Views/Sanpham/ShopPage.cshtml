@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Ictshop.Models.Sanpham>
+@{
+    ViewBag.Title = "ShopPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="mainmenu-area">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li class="active"><a href="@Url.Action("ShopPage","Sanpham")">Shop page</a></li>
+                    <li><a href="@Url.Action("GioHang","GioHang")">Cart</a></li>
+                    <li><a href="@Url.Action("Checkout","Home")">Checkout</a></li>
+                    <li><a href="@Url.Action("Contact","Home")">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> <!-- End mainmenu area -->
+
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Shop</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            @foreach (var sanpham in Model)
+            {
+                <div class="col-sm-3 col-md-3 ">
+                    <div class="single-shop-product">
+                        <div class="product-f-image">
+                            <a href="@Url.Action("xemchitiet", new {@Masp=sanpham.Masp })">
+                                <img style="width:500px;" src=@Url.Content("~/HinhanhSP/" + sanpham.Anhbia) />
+                            </a>
+                        </div>
+                        <h2><a href="@Url.Action("xemchitiet", new {@Masp=@sanpham.Masp })">@sanpham.Tensp</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>@sanpham.Giatien</ins>
+                        </div>
+
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="@Url.Action("ThemGioHang", "GioHang", new { @iMasp = @sanpham.Masp, @strURL = Request.Url.ToString() })">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        
+    </div>
+</div>
+
+
